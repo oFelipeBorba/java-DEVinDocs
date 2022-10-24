@@ -5,7 +5,6 @@ public abstract class Pessoa {
 
     //construtores
     public Pessoa(){
-
     }
     public Pessoa(String nome, String sobrenome, String dataNascimento, String cpf, String enderecoCompleto) {
         this.nome = nome;

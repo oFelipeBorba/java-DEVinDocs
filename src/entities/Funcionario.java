@@ -9,9 +9,6 @@ public class Funcionario extends Pessoa{
 
 
     //construtores
-    public Funcionario(){
-        super();
-    }
     public Funcionario(String nome, String sobrenome,  String dataNascimento, String cpf, String enderecoCompleto, String login, String senha){
         super(nome, sobrenome, dataNascimento, cpf, enderecoCompleto);
         Double id = Math.random();
@@ -37,9 +34,9 @@ public class Funcionario extends Pessoa{
         this.senha = senha;
     }
 
-    //metodos
+    //metodo que monta a apresentação dos dados de cada colaborador
     public void listarDados(){
-        System.out.println("\n-----Funcionário ID: "+getId()+" -----");
+        System.out.println("\n----- Funcionário ID: "+getId()+" -----");
         System.out.println("Nome completo: "+getNome()+" "+getSobrenome());
         System.out.println("Data de nascimento: "+getDataNascimento());
         System.out.println("CPF: "+getCpf());

@@ -2,19 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="48a8732d-e59b-4265-a6d1-5bb468f3c842" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java-DEVinDocs.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Program.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/entities/Documento.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/entities/Funcionario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/entities/Gerente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/entities/GestaoEquipe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/entities/Pessoa.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/entities/Supervisor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/Documento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/GestaoDocumento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/Funcionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Funcionario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/Gerente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Gerente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/GestaoEquipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/GestaoEquipe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/Pessoa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Pessoa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/Supervisor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Supervisor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,16 +37,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Program" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Program" />
@@ -77,7 +72,8 @@
       <workItem from="1666443753180" duration="8287000" />
       <workItem from="1666550868716" duration="725000" />
       <workItem from="1666555417678" duration="2245000" />
-      <workItem from="1666563080987" duration="4963000" />
+      <workItem from="1666563080987" duration="5591000" />
+      <workItem from="1666614621000" duration="7333000" />
     </task>
     <servers />
   </component>

@@ -7,9 +7,6 @@ public class Supervisor extends Pessoa{
 
 
     //construtores
-    public Supervisor(){
-        super();
-    }
     public Supervisor(String nome, String sobrenome,  String dataNascimento, String cpf, String enderecoCompleto, String login, String senha){
         super(nome, sobrenome, dataNascimento, cpf, enderecoCompleto);
         Double id = Math.random();
@@ -35,9 +32,9 @@ public class Supervisor extends Pessoa{
         this.senha = senha;
     }
 
-    //metodos
+    //metodo que monta a apresentação dos dados de cada colaborador
     public void listarDados(){
-        System.out.println("\n-----Supervisor ID: "+getId()+" -----");
+        System.out.println("\n----- Supervisor ID: "+getId()+" -----");
         System.out.println("Nome completo: "+getNome()+" "+getSobrenome());
         System.out.println("Data de nascimento: "+getDataNascimento());
         System.out.println("CPF: "+getCpf());
