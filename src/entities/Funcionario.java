@@ -1,18 +1,15 @@
 package entities;
 
-import java.util.ArrayList;
-
-public class Funcionario extends Pessoa{
-    private Double id;
+public class Funcionario extends Colaborador{
     private String login;
     private String senha;
+    private Integer idFuncionario;
 
 
     //construtores
     public Funcionario(String nome, String sobrenome,  String dataNascimento, String cpf, String enderecoCompleto, String login, String senha){
         super(nome, sobrenome, dataNascimento, cpf, enderecoCompleto);
-        Double id = Math.random();
-        this.id = id;
+        idFuncionario = 15000+getId();
         this.login = login;
         this.senha = senha;
     }
@@ -21,9 +18,8 @@ public class Funcionario extends Pessoa{
     public String getLogin() {
         return login;
     }
-
-    public Double getId() {
-        return id;
+    public Integer getIdFuncionario() {
+        return idFuncionario;
     }
 
     //setters
@@ -36,10 +32,10 @@ public class Funcionario extends Pessoa{
 
     //metodo que monta a apresentação dos dados de cada colaborador
     public void listarDados(){
-        System.out.println("\n----- Funcionário ID: "+getId()+" -----");
+        System.out.println("\n----- Funcionário ID: "+getIdFuncionario()+" -----");
         System.out.println("Nome completo: "+getNome()+" "+getSobrenome());
         System.out.println("Data de nascimento: "+getDataNascimento());
-        System.out.println("CPF: "+getCpf());
+        System.out.println("CPF: "+ValidaCPF.montaCpfApresentacao(getCpf()));
         System.out.println("Endereço completo: "+getEnderecoCompleto());
         System.out.println("Login de acesso: "+getLogin());
     }

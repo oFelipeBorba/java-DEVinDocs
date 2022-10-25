@@ -2,6 +2,8 @@ package entities;
 
 public abstract class Pessoa {
     private String nome,sobrenome,dataNascimento, cpf,enderecoCompleto;
+    private Integer id;
+    private static int contador = 0;
 
     //construtores
     public Pessoa(){
@@ -12,9 +14,14 @@ public abstract class Pessoa {
         this.dataNascimento = dataNascimento;
         this.cpf = cpf;
         this.enderecoCompleto = enderecoCompleto;
+        this.id = contador++;
     }
 
     //getters
+
+    public Integer getId() {
+        return id;
+    }
     public String getNome() {
         return nome;
     }

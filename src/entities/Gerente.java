@@ -1,16 +1,15 @@
 package entities;
 
-public class Gerente extends Pessoa{
-    private Double id;
+public class Gerente extends Colaborador{
     private String login;
     private String senha;
+    private Integer idGerente;
 
 
     //construtores
     public Gerente(String nome, String sobrenome,  String dataNascimento, String cpf, String enderecoCompleto, String login, String senha){
         super(nome, sobrenome, dataNascimento, cpf, enderecoCompleto);
-        Double id = Math.random();
-        this.id = id;
+        idGerente = 21000+getId();
         this.login = login;
         this.senha = senha;
     }
@@ -20,8 +19,8 @@ public class Gerente extends Pessoa{
         return login;
     }
 
-    public Double getId() {
-        return id;
+    public Integer getIdGerente() {
+        return idGerente;
     }
 
     //setters
@@ -34,10 +33,10 @@ public class Gerente extends Pessoa{
 
     //metodo que monta a apresentação dos dados de cada colaborador
     public void listarDados(){
-        System.out.println("\n----- Gerente ID: "+getId()+" -----");
+        System.out.println("\n----- Gerente ID: "+getIdGerente()+" -----");
         System.out.println("Nome completo: "+getNome()+" "+getSobrenome());
         System.out.println("Data de nascimento: "+getDataNascimento());
-        System.out.println("CPF: "+getCpf());
+        System.out.println("CPF: "+ValidaCPF.montaCpfApresentacao(getCpf()));
         System.out.println("Endereço completo: "+getEnderecoCompleto());
         System.out.println("Login de acesso: "+getLogin());
     }

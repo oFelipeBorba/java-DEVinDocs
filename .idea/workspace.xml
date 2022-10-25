@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="48a8732d-e59b-4265-a6d1-5bb468f3c842" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/entities/Colaborador.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/entities/ValidaCPF.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/Documento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/GestaoDocumento.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entities/Funcionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Funcionario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entities/Gerente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Gerente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/GestaoEquipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/GestaoEquipe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/GestaoDocumento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/GestaoDocumento.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entities/Pessoa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Pessoa.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entities/Supervisor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Supervisor.java" afterDir="false" />
     </list>
@@ -73,7 +74,9 @@
       <workItem from="1666550868716" duration="725000" />
       <workItem from="1666555417678" duration="2245000" />
       <workItem from="1666563080987" duration="5591000" />
-      <workItem from="1666614621000" duration="7333000" />
+      <workItem from="1666614621000" duration="8689000" />
+      <workItem from="1666626289670" duration="4000" />
+      <workItem from="1666654567574" duration="4262000" />
     </task>
     <servers />
   </component>

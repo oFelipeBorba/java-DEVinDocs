@@ -2,10 +2,12 @@ import entities.*;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import entities.ValidaCPF;
 
 public class Program {
     public static void main(String[] args) {
         int selecaoMenu;
+        boolean validadorCpf = false;
         String nome, sobrenome, cpf, enderecoCompleto,dataNascimento,login,senha;
         Pessoa novoColaborador;
         GestaoEquipe gerenciaEquipe = new GestaoEquipe();
@@ -30,8 +32,14 @@ public class Program {
                         System.out.println("\nInforme seu sobrenome: ");
                         sobrenome = teclado.nextLine();
 
-                        System.out.println("\nInforme seu cpf: ");
-                        cpf = teclado.nextLine();
+                        do {
+                            System.out.println("\nInforme os 11 números do seu cpf: ");
+                            cpf = teclado.nextLine();
+                            validadorCpf = ValidaCPF.verificaCPF(cpf);
+                            if (!validadorCpf){
+                                System.out.println("ATENÇÃO: O cpf informado não é valido.\nPor favor tente novamente, informe apenas números e um cpf real.");
+                            }
+                        }while (!validadorCpf);
 
                         System.out.println("\nInforme seu endereço completo: ");
                         enderecoCompleto = teclado.nextLine();
