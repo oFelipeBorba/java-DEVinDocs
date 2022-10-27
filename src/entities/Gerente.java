@@ -1,34 +1,30 @@
 package entities;
 
-public class Gerente extends Colaborador{
-    private String login;
-    private String senha;
-    private Integer idGerente;
+import utilities.ValidaCPF;
 
+public class Gerente extends Colaborador{
+    private Integer idGerente;
+    private String dadosAcessoGerente;
 
     //construtores
     public Gerente(String nome, String sobrenome,  String dataNascimento, String cpf, String enderecoCompleto, String login, String senha){
-        super(nome, sobrenome, dataNascimento, cpf, enderecoCompleto);
-        idGerente = 21000+getId();
-        this.login = login;
-        this.senha = senha;
+        super(nome, sobrenome, dataNascimento, cpf, enderecoCompleto,login,senha);
+        this.idGerente = 21000+getId();
+        this.dadosAcessoGerente = getLogin()+getSenha();
     }
 
-    //getters
-    public String getLogin() {
-        return login;
+    public Gerente(String nome, String sobrenome, Integer id) {
+        super();
+        this.idGerente=21000+id;
     }
 
+    //getter
     public Integer getIdGerente() {
         return idGerente;
     }
 
-    //setters
-    public void setLogin(String login) {
-        this.login = login;
-    }
-    public void setSenha(String senha) {
-        this.senha = senha;
+    public String getDadosAcessoGerente() {
+        return dadosAcessoGerente;
     }
 
     //metodo que monta a apresentação dos dados de cada colaborador
@@ -36,7 +32,7 @@ public class Gerente extends Colaborador{
         System.out.println("\n----- Gerente ID: "+getIdGerente()+" -----");
         System.out.println("Nome completo: "+getNome()+" "+getSobrenome());
         System.out.println("Data de nascimento: "+getDataNascimento());
-        System.out.println("CPF: "+ValidaCPF.montaCpfApresentacao(getCpf()));
+        System.out.println("CPF: "+ ValidaCPF.montaCpfApresentacao(getCpf()));
         System.out.println("Endereço completo: "+getEnderecoCompleto());
         System.out.println("Login de acesso: "+getLogin());
     }

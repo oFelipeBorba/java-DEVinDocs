@@ -2,7 +2,10 @@ import entities.*;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
-import entities.ValidaCPF;
+
+import utilities.GestaoEquipe;
+import utilities.ValidaCPF;
+import utilities.SistemaInterno;
 
 public class Program {
     public static void main(String[] args) {
@@ -17,7 +20,8 @@ public class Program {
             System.out.println("\n------MENU------");
             System.out.println("Selecione uma opção:");
             System.out.println("1 - Cadastrar novo colaborador");
-            System.out.println("2 - Gerar relatório da lista de colaborador");
+            System.out.println("2 - Gerar relatório da lista de colaboradores");
+            System.out.println("3 - Realizar login no sistema");
             System.out.println("0 - Sair");
 
             try{
@@ -37,7 +41,7 @@ public class Program {
                             cpf = teclado.nextLine();
                             validadorCpf = ValidaCPF.verificaCPF(cpf);
                             if (!validadorCpf){
-                                System.out.println("ATENÇÃO: O cpf informado não é valido.\nPor favor tente novamente, informe apenas números e um cpf real.");
+                                System.out.println("ATENÇÃO: O cpf informado não é valido.\nPor favor tente novamente, informe apenas os números de um cpf real.");
                             }
                         }while (!validadorCpf);
 
@@ -46,6 +50,12 @@ public class Program {
 
                         System.out.println("\nInforme sua data de nascimento: ");
                         dataNascimento = teclado.nextLine();
+
+                        System.out.println("\nInforme o login do novo colaborador: ");
+                        login = teclado.nextLine();
+
+                        System.out.println("\nInforme a senha do novo colaborador: ");
+                        senha = teclado.nextLine();
 
                         System.out.println("\nSelecione o cargo do novo colaborador:");
                         System.out.println("1 - Funcionário");
@@ -57,29 +67,14 @@ public class Program {
                             tipoColaborador = teclado.nextInt();
                             switch (tipoColaborador){
                                 case 1:
-                                    teclado.nextLine();
-                                    System.out.println("\nInforme o login do novo funcionário: ");
-                                    login = teclado.nextLine();
-                                    System.out.println("\nInforme a senha do novo funcionário: ");
-                                    senha = teclado.nextLine();
                                     novoColaborador = new Funcionario(nome, sobrenome, dataNascimento, cpf, enderecoCompleto,login,senha);
                                     gerenciaEquipe.adicionaColaborador(novoColaborador);
                                     break;
                                 case 2:
-                                    teclado.nextLine();
-                                    System.out.println("\nInforme o login do novo supervisor: ");
-                                    login = teclado.nextLine();
-                                    System.out.println("\nInforme a senha do novo supervisor: ");
-                                    senha = teclado.nextLine();
                                     novoColaborador = new Supervisor(nome, sobrenome, dataNascimento, cpf, enderecoCompleto,login,senha);
                                     gerenciaEquipe.adicionaColaborador(novoColaborador);
                                     break;
                                 case 3:
-                                    teclado.nextLine();
-                                    System.out.println("\nInforme o login do novo gerente: ");
-                                    login = teclado.nextLine();
-                                    System.out.println("\nInforme a senha do novo gerente: ");
-                                    senha = teclado.nextLine();
                                     novoColaborador = new Gerente(nome, sobrenome, dataNascimento, cpf, enderecoCompleto,login,senha);
                                     gerenciaEquipe.adicionaColaborador(novoColaborador);
                                     break;
@@ -114,6 +109,12 @@ public class Program {
                             break;
                         }
                     case 3:
+                        System.out.println("\nDigite seu login:");
+                        login = teclado.nextLine();
+                        System.out.println("\nDigite sua senha:");
+                        senha = teclado.nextLine();
+                        SistemaInterno.acessaSistemaInterno(login,senha);
+
                         break;
                     case 0:
                         System.out.println("\nSaindo do sistema...");

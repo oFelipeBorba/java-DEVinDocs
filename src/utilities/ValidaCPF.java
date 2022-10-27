@@ -1,4 +1,4 @@
-package entities;
+package utilities;
 
 import java.util.InputMismatchException;
 

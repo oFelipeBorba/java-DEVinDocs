@@ -1,18 +1,22 @@
-package entities;
+package utilities;
+
+import entities.Funcionario;
+import entities.Gerente;
+import entities.Pessoa;
+import entities.Supervisor;
 
 import java.util.ArrayList;
 
 public class GestaoEquipe {
     //atributos do tipo ArrayList. reservado para montar as listas dos diferentes tipos de colaboradores
-    private ArrayList<Funcionario> listaFuncionarios;
-    private ArrayList<Supervisor> listaSupervisores;
-    private ArrayList<Gerente> listaGerentes;
+    public static ArrayList<Funcionario> listaFuncionarios = new ArrayList<>();
+    public static ArrayList<Supervisor> listaSupervisores = new ArrayList<>();
+    public static ArrayList<Gerente> listaGerentes = new ArrayList<>();
+
     //construtor
     public GestaoEquipe(){
-    this.listaFuncionarios = new ArrayList<>();
-    this.listaSupervisores = new ArrayList<>();
-    this.listaGerentes = new ArrayList<>();
     }
+
     //metodo que adiciona o novo colaborados na sua ArrayList de acordo com a instância que o obj foi criado
     public void adicionaColaborador(Pessoa pessoa){
         if(pessoa instanceof Funcionario){
