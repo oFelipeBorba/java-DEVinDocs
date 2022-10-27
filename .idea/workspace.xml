@@ -2,16 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="48a8732d-e59b-4265-a6d1-5bb468f3c842" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/utilities/SistemaInterno.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entities/Colaborador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Colaborador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entities/Funcionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Funcionario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/Gerente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Gerente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/GestaoDocumento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilities/Documento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/GestaoEquipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilities/GestaoEquipe.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entities/Supervisor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Supervisor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/ValidaCPF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilities/ValidaCPF.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utilities/Documento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilities/Documento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utilities/SistemaInterno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilities/SistemaInterno.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +24,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsbtTreeLayoutManager">
+    <layout place="tools.popupGrunt">
+      <scroll-view-position x="0" y="0" />
+    </layout>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -80,7 +82,8 @@
       <workItem from="1666626289670" duration="4000" />
       <workItem from="1666654567574" duration="5006000" />
       <workItem from="1666718633401" duration="13872000" />
-      <workItem from="1666790760876" duration="18136000" />
+      <workItem from="1666790760876" duration="19393000" />
+      <workItem from="1666873680545" duration="15191000" />
     </task>
     <servers />
   </component>

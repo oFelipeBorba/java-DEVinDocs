@@ -3,10 +3,15 @@ package entities;
 
 import utilities.Documento;
 
+import java.util.ArrayList;
+import java.util.Date;
+
 public abstract class Colaborador extends Pessoa{
     private String login;
     private String senha;
-    Documento novoDocumento;
+    protected Documento novoDocumento;
+    protected Date novaData;
+    protected static ArrayList<Integer> listaIdsDocsTramitaveis;
 
     //construtor
     public Colaborador() {
@@ -50,27 +55,33 @@ public abstract class Colaborador extends Pessoa{
     }
     public boolean listarDocumentosTramitaveis(int idCriador){
         novoDocumento = new Documento();
-        if(novoDocumento.getListaDocumentos().size() == 0){
-            System.out.println("\nATENÇÃO: Não existem documentos cadastrados. Realize o cadastro de novos documentos para visualizar o relatório.");
-            return false;
-        }else{
-            System.out.println("\nSegue abaixo a lista de todos os documentos tramitaveis: ");
-            for(Documento doc: novoDocumento.getListaDocumentos()){
-                if (doc.toString().contains("Em aberto") && doc.getIdCriador().equals(idCriador)){
-                    System.out.println(doc.toString());
+            if (novoDocumento.getListaDocumentos().toString().contains("Em aberto")){
+                listaIdsDocsTramitaveis = new ArrayList<>();
+                for(Documento doc: novoDocumento.getListaDocumentos()){
+                    if (doc.toString().contains("Em aberto") && doc.getIdResponsavel().equals(idCriador)){
+                        System.out.println(doc.toString());
+                        listaIdsDocsTramitaveis.add(doc.getIdDoc());
+                    }
                 }
+                if (listaIdsDocsTramitaveis.size() == 0){
+                    return false;
+                }
+            }else {
+                return false;
+            }
+            return true;
+        }
+
+    public void tramitaDocumento(int id, int idResponsavel, int idTramite){
+        novoDocumento = new Documento();
+        for (Documento doc: novoDocumento.getListaDocumentos()){
+            if (id == doc.getIdDoc()){
+                doc.setIdResponsavel(idResponsavel);
+                doc.setDataTramitacao(novaData = new Date());
+                doc.setIdUltimoTramitador(String.valueOf(idTramite));
             }
         }
-        return true;
-    }
-    public void tramitaDocumento(int id, int idResponsavel){
-        novoDocumento = new Documento();
-       for (Documento doc: novoDocumento.getListaDocumentos()){
-           if (id == doc.getIdDoc()){
-               doc.setIdResponsavel(idResponsavel);
-           }
-       }
-        System.out.println("\nSucesso,o documento foi tramitado.");
+        System.out.println("\nSucesso,o documento foi tramitado para o supervisor selecionado.");
     }
 
 }

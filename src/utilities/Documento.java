@@ -1,14 +1,17 @@
 package utilities;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Documento {
     private Integer idDoc;
-    private static int contador = 0;
+    private Date dataTramitacao;
+    private static int contador = 0, contadorArquivados = 0;
     private Integer idResponsavel;
     private Integer idCriador;
     private String url;
     private String estado = "Em aberto";
+    private String idUltimoTramitador = "Documento ainda nao foi tramitado";
     private static ArrayList<Documento> listaDocumentos = new ArrayList<>();
 
     //construtor
@@ -20,6 +23,7 @@ public class Documento {
         this.idCriador = idCriador;
         this.url = url;
         this.idDoc = contador++;
+        this.dataTramitacao = new Date();
         listaDocumentos.add(this);
     }
     //getters
@@ -41,6 +45,9 @@ public class Documento {
     public ArrayList<Documento> getListaDocumentos() {
         return listaDocumentos;
     }
+    public static int getContadorArquivados() {
+        return contadorArquivados;
+    }
 
     //setters
     public void setEstado(String estado) {
@@ -52,13 +59,24 @@ public class Documento {
     public void setIdResponsavel(Integer idResponsavel) {
         this.idResponsavel = idResponsavel;
     }
+    public void setDataTramitacao(Date dataTramitacao) {
+        this.dataTramitacao = dataTramitacao;
+    }
+    public static void setContadorArquivados(int contadorArquivados) {
+        Documento.contadorArquivados = contadorArquivados;
+    }
+    public void setIdUltimoTramitador(String idUltimoTramitador) {
+        this.idUltimoTramitador = idUltimoTramitador;
+    }
 
     @Override
     public String toString() {
         return "\n----- Documento ID: " + idDoc +" -----"+
                 "\nIdentificador do colaborador responsável = " + idResponsavel +
                 "\nIdentificador do colaborador que criou = " + idCriador +
+                "\nIdentificador do ultimo colaborador que tramitou o documento = "+ idUltimoTramitador+
                 "\nLink do documento = " + url  +
-                "\nEstado atual = " + estado;
+                "\nEstado atual = " + estado+
+                "\nData da última movimentação = "+dataTramitacao;
     }
 }
