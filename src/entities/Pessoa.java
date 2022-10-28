@@ -53,4 +53,5 @@ public abstract class Pessoa {
     public void setEnderecoCompleto(String enderecoCompleto) {
         this.enderecoCompleto = enderecoCompleto;
     }
+
 }

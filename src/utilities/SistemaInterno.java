@@ -12,7 +12,7 @@ public class SistemaInterno {
     private static Funcionario funcionarioLogado;
     private static Supervisor supervisorLogado;
     private static Gerente gerenteLogado;
-    private static int estadoMenuInterno, nivelDeAcesso = 0, docTramitar,docAprovacao;
+    private static int estadoMenuInterno, nivelDeAcesso = 0, docTramitar,docAprovacao,docArquivar;
     private static Integer idResponsavel;
     private static String urlNovoDoc;
     private static ArrayList<Integer> listaIdsValidos;
@@ -55,7 +55,7 @@ public class SistemaInterno {
             //Menu interno para funcionarios, lista apenas os documentos criados por ele e pode os tramitar apenas para supervisores.
             case 1:
                 do {
-                    System.out.println("\n------MENU INTERNO------");
+                    System.out.println("\n------MENU INTERNO -> FUNCIONÁRIO------");
                     System.out.println("Selecione uma opção:");
                     System.out.println("1 - Cadastrar novo documento");
                     System.out.println("2 - Listar documentos criados");
@@ -121,7 +121,7 @@ public class SistemaInterno {
             //Menu interno de supervisores, pode listar os documentos criados por qualquer funcionario e tramitar o que ele criou ou que foi direcionado a ele.
             case 2:
                 do {
-                    System.out.println("\n------MENU INTERNO------");
+                    System.out.println("\n------MENU INTERNO -> SUPERVISOR------");
                     System.out.println("Selecione uma opção:");
                     System.out.println("1 - Cadastrar novo documento");
                     System.out.println("2 - Listar documentos 'Em aberto' cadastrados por todos funcionarios e por você");
@@ -142,7 +142,7 @@ public class SistemaInterno {
                                 supervisorLogado.listarDocumentos();
                                 break;
                             case 3:
-                                //Apresento a lista dos documentos criados pelo funcionario logado, que ainda podem ser tramitadas
+                                //Apresento a lista dos documentos criados pelo supervisor logado, que ainda podem ser tramitadas
                                 if (supervisorLogado.listarDocumentosTramitaveis(supervisorLogado.getIdSupervisor())){
                                     do {
                                         System.out.println("\nSelecione o documento que gostaria de tramitar da lista acima informando o ID:");
@@ -152,8 +152,9 @@ public class SistemaInterno {
                                         }
                                     }while (!supervisorLogado.getListaIdsDocsTramitaveis().contains(docTramitar));
                                     //Quando o usuario informa o id do documento que ele quer tramitar, ele deve informar se ele vai aprovar ou recusar o tramite.
-                                    //Apenas se o documento foi criado por um funcionario, caso ele tenha sido criado por ele mesmo, ele direciona a um gerente.
-                                    System.out.println("\nPor favor informe se gostaria de aprovar ou recusar o documento selecionado.");                    System.out.println("Selecione uma opção:");
+                                    //Apenas se o documento foi criado por um funcionario, caso ele tenha sido criado por ele mesmo, ele deve aprovar para direcionar a um gerente.
+                                    System.out.println("\nPor favor informe se gostaria de aprovar ou recusar o documento selecionado.");
+                                    System.out.println("Selecione uma opção:");
                                     System.out.println("1 - Aprovar");
                                     System.out.println("2 - Recusar");
                                         do {
@@ -196,12 +197,79 @@ public class SistemaInterno {
                     }
                 } while (estadoMenuInterno != 0);
                 break;
-
-
-
-
+            //Menu interno de gerentes,
             case 3:
-                System.out.println("Chama funcao com Gerente");
+                do {
+                    System.out.println("\n------MENU INTERNO -> GERENTE------");
+                System.out.println("Selecione uma opção:");
+                System.out.println("1 - Cadastrar novo documento");
+                System.out.println("2 - Listar todos documentos já cadastrados no sistema");
+                System.out.println("3 - Arquivar/Desarquivar documentos");
+                System.out.println("0 - LogOut");
+                try {
+                    estadoMenuInterno = teclado.nextInt();
+                    teclado.nextLine();
+
+                    switch (estadoMenuInterno) {
+                        case 1:
+                            System.out.println("\nUm novo documento está sendo criado.\nPor favor informe o url que o documento irá armazenar:");
+                            urlNovoDoc = teclado.nextLine();
+                            gerenteLogado.cadastraDocumento(gerenteLogado.getIdGerente(), gerenteLogado.getIdGerente(), urlNovoDoc);
+                            System.out.println("\nNovo documento criado com sucesso!");
+                            break;
+                        case 2:
+                            gerenteLogado.listarDocumentos();
+                            break;
+                        case 3:
+                            System.out.println("\nSelecione uma opção:");
+                            System.out.println("1 - Arquivar documento");
+                            System.out.println("2 - Desarquivar documento");
+                            do {
+                                docArquivar = teclado.nextInt();
+                                if (docAprovacao!=1 && docAprovacao!=2){
+                                    System.out.println("\nPor favor digite apenas uma das opções acima:");
+                                }
+                            }while (docArquivar!=1 && docArquivar!=2);
+                            switch (docArquivar){
+                                case 1:
+                                    gerenteLogado.listaDocArquivaveis(gerenteLogado.getIdGerente());
+                                    if (gerenteLogado.getListaIdsDocsTramitaveis().size() > 0){
+                                        do {
+                                            System.out.println("\nPor favor informe pelo ID qual documento da lista acima gostaria de arquivar no sistema:");
+                                            docArquivar = teclado.nextInt();
+                                            if (!gerenteLogado.getListaIdsDocsTramitaveis().contains(docArquivar)){
+                                                System.out.println("\nATENÇÃO: Essa opção não é valida.");
+                                            }
+                                        }while (!gerenteLogado.getListaIdsDocsTramitaveis().contains(docArquivar));
+                                        gerenteLogado.arquivarDocumento(docArquivar, gerenteLogado.getIdGerente());
+                                    }else {
+                                        System.out.println("Não existem documentos nesta categoria.");
+                                    }
+                                    break;
+                                case 2:
+                                    gerenteLogado.listaDocDesarquivaveis(gerenteLogado.getIdGerente());
+                                    if (gerenteLogado.getListaIdsDocsTramitaveis().size() > 0){
+                                        do {
+                                            System.out.println("\nPor favor informe pelo ID qual documento da lista acima gostaria de desarquivar no sistema:");
+                                            docArquivar = teclado.nextInt();
+                                            if (!gerenteLogado.getListaIdsDocsTramitaveis().contains(docArquivar)){
+                                                System.out.println("\nATENÇÃO: Essa opção não é valida.");
+                                            }
+                                        }while (!gerenteLogado.getListaIdsDocsTramitaveis().contains(docArquivar));
+                                        gerenteLogado.desarquivarDocumento(docArquivar, gerenteLogado.getIdGerente());
+                                }else {
+                                        System.out.println("Não existem documentos nesta categoria.");
+                                    }
+                                    break;
+                            }
+                            break;
+                    }
+                }catch (InputMismatchException err){
+                    System.out.println("\nATENÇÃO: Você digitou caracteres, por favor informe apenas o número da opção que deseja!\nInfelizmente teremos que te desconectar do sistema, realize o login e tente novamente.");
+                    teclado.next();
+                    break;
+                }
+                } while (estadoMenuInterno != 0);
                 break;
             //Caso o login e senha informados nao sejam compativeis com nenhum dado ja armazenado, entra no case 0 e nao permite a entrada no sistemaInterno
             case 0:

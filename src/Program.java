@@ -3,6 +3,7 @@ import entities.*;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import utilities.Documento;
 import utilities.GestaoEquipe;
 import utilities.ValidaCPF;
 import utilities.SistemaInterno;
@@ -21,8 +22,8 @@ public class Program {
             System.out.println("\n------MENU------");
             System.out.println("Selecione uma opção:");
             System.out.println("1 - Cadastrar novo colaborador");
-            System.out.println("2 - Gerar relatório da lista de colaboradores");
-            System.out.println("3 - Realizar login no sistema");
+            System.out.println("2 - Realizar login no sistema");
+            System.out.println("3 - Gerar relatório da lista de colaboradores");
             System.out.println("4 - Gerar relatório do total de documentos arquivados");
             System.out.println("0 - Sair");
 
@@ -102,8 +103,16 @@ public class Program {
                             teclado.next();
                             break;
                         }
-                    //Gero uma lista de colaboradores de acordo com a selecao do usuario. Chamo o metodo listarColaboradores.
+                    //Coleto do usuario o login e senha que ele deseja usar para acessar o sistema e chamo o metodo acessaSistemaInterno da classe SistemaInterno.
                     case 2:
+                        System.out.println("\nDigite seu login:");
+                        login = teclado.nextLine();
+                        System.out.println("\nDigite sua senha:");
+                        senha = teclado.nextLine();
+                        SistemaInterno.acessaSistemaInterno(login,senha);
+                        break;
+                    //Gero uma lista de colaboradores de acordo com a selecao do usuario. Chamo o metodo listarColaboradores.
+                    case 3:
                         System.out.println("\nSelecione quais colaboradores irão compor o relatório:");
                         System.out.println("1 - Funcionários");
                         System.out.println("2 - Supervisores");
@@ -123,15 +132,8 @@ public class Program {
                             teclado.next();
                             break;
                         }
-                    //Coleto do usuario o login e senha que ele deseja usar para acessar o sistema e chamo o metodo acessaSistemaInterno da classe SistemaInterno.
-                    case 3:
-                        System.out.println("\nDigite seu login:");
-                        login = teclado.nextLine();
-                        System.out.println("\nDigite sua senha:");
-                        senha = teclado.nextLine();
-                        SistemaInterno.acessaSistemaInterno(login,senha);
-                        break;
                     case 4:
+                        System.out.println("\nO número total de documentos aquivados no sistema DOCin são: "+ Documento.getContadorArquivados());
                         break;
                     case 0:
                         System.out.println("\nSaindo do sistema...");

@@ -81,7 +81,7 @@ public abstract class Colaborador extends Pessoa{
                 doc.setIdUltimoTramitador(String.valueOf(idTramite));
             }
         }
-        System.out.println("\nSucesso,o documento foi tramitado para o supervisor selecionado.");
+        System.out.println("\nSucesso,o documento foi tramitado para o colaborador selecionado.");
     }
 
 }

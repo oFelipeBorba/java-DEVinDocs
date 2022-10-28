@@ -6,8 +6,9 @@
       <change beforePath="$PROJECT_DIR$/src/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entities/Colaborador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Colaborador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entities/Funcionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Funcionario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/Gerente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Gerente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/Pessoa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Pessoa.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entities/Supervisor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Supervisor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilities/Documento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilities/Documento.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utilities/SistemaInterno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilities/SistemaInterno.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,7 +84,11 @@
       <workItem from="1666654567574" duration="5006000" />
       <workItem from="1666718633401" duration="13872000" />
       <workItem from="1666790760876" duration="19393000" />
-      <workItem from="1666873680545" duration="15191000" />
+      <workItem from="1666873680545" duration="17641000" />
+      <workItem from="1666904943807" duration="4751000" />
+      <workItem from="1666912251922" duration="772000" />
+      <workItem from="1666917162300" duration="30000" />
+      <workItem from="1666997343520" duration="4010000" />
     </task>
     <servers />
   </component>

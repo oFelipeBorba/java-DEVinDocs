@@ -4,7 +4,6 @@ import utilities.Documento;
 import utilities.ValidaCPF;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 public class Funcionario extends Colaborador{
     private Integer idFuncionario;
@@ -41,6 +40,7 @@ public class Funcionario extends Colaborador{
         System.out.println("Endereço completo: "+getEnderecoCompleto());
         System.out.println("Login de acesso: "+getLogin());
     }
+    //Com override eu ajusto a lista para ser apresentada de acordo com os criterios de visualizacao para funcionarios
     @Override
     public void listarDocumentos(){
         novoDocumento = new Documento();

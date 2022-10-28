@@ -4,7 +4,6 @@ import utilities.Documento;
 import utilities.ValidaCPF;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 public class Supervisor extends Colaborador{
     private Integer idSupervisor;
@@ -43,10 +42,11 @@ public class Supervisor extends Colaborador{
         System.out.println("Endereço completo: "+getEnderecoCompleto());
         System.out.println("Login de acesso: "+getLogin());
     }
+    //Com override eu ajusto a lista para ser apresentada de acordo com os criterios de visualizacao para supervisores
     @Override
     public void listarDocumentos(){
         novoDocumento = new Documento();
-        if (novoDocumento.getListaDocumentos().size() > 0){
+        if (novoDocumento.getListaDocumentos().size() > 0 && novoDocumento.getListaDocumentos().toString().contains(getIdSupervisor().toString())){
             System.out.println("\nSegue abaixo a lista de todos os documentos cadastrados no sistema por funcionarios e voce: ");
             for(Documento doc: novoDocumento.getListaDocumentos()){
                 if (doc.getEstado().equals("Em aberto") && (doc.getIdCriador().toString().contains("15") || doc.getIdResponsavel().equals(getIdSupervisor()) || doc.getIdCriador().equals(getIdSupervisor()))){
@@ -57,8 +57,10 @@ public class Supervisor extends Colaborador{
             System.out.println("Não existem documentos que você possa acessar cadastrados no sistema.");
         }
     }
+    //Metodo especifico do supervisor, que permite recusar o documento, direcionando de volta para o colaborador que o criou
     public void recusaDocumento(int idDoc, int idSupervisor){
         for (Documento doc:novoDocumento.getListaDocumentos()){
+            //Faco uma verificacao para saber se o supervisor esta tentando recusar um documento dele mesmo, o que nao e permitido.
             if (doc.getIdDoc().equals(idDoc) && !doc.getIdCriador().equals(idSupervisor) ){
                 doc.setIdResponsavel(doc.getIdCriador());
                 System.out.println("O documento foi recusado com sucesso e retornou para o seu criador(ID: "+doc.getIdCriador()+")");
