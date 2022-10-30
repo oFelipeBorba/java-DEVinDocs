@@ -159,9 +159,7 @@ public class SistemaInterno {
                                     System.out.println("2 - Recusar");
                                         do {
                                             docAprovacao = teclado.nextInt();
-                                            if (docAprovacao!=1 && docAprovacao!=2){
-                                                System.out.println("\nPor favor digite apenas uma das opções acima:");
-                                            }
+                                            System.out.println("\nPor favor digite apenas uma das opções acima:");
                                         }while (docAprovacao!=1 && docAprovacao!=2);
                                     if (docAprovacao == 1){
                                         listaIdsValidos = new ArrayList<>();
@@ -226,9 +224,7 @@ public class SistemaInterno {
                             System.out.println("2 - Desarquivar documento");
                             do {
                                 docArquivar = teclado.nextInt();
-                                if (docAprovacao!=1 && docAprovacao!=2){
-                                    System.out.println("\nPor favor digite apenas uma das opções acima:");
-                                }
+                                System.out.println("\nPor favor digite apenas uma das opções acima:");
                             }while (docArquivar!=1 && docArquivar!=2);
                             switch (docArquivar){
                                 case 1:
