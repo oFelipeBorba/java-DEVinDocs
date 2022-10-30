@@ -14,7 +14,7 @@ public class ValidaCPF {
                 (cpf.length() != 11))
             return(false);
 
-        //variaveis de interesse para realizar os calculos de validacao
+        //variaveis de interesse para realizar os calculos de validação
         char dv10, dv11;
         int somaParcela, i, resto, num, peso;
 

@@ -21,9 +21,6 @@ public class Gerente extends Colaborador{
         this.idGerente=21000+id;
     }
 
-    public Gerente() {
-
-    }
 
     //getter
     public Integer getIdGerente() {

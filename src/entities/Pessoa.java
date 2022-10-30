@@ -18,7 +18,6 @@ public abstract class Pessoa {
     }
 
     //getters
-
     public Integer getId() {
         return id;
     }
@@ -35,23 +34,6 @@ public abstract class Pessoa {
     }
     public String getEnderecoCompleto() {
         return enderecoCompleto;
-    }
-
-    //setters
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-    public void setSobrenome(String sobrenome) {
-        this.sobrenome = sobrenome;
-    }
-    public void setDiaNascimento(String dataNascimento) {
-        this.dataNascimento = dataNascimento;
-    }
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
-    public void setEnderecoCompleto(String enderecoCompleto) {
-        this.enderecoCompleto = enderecoCompleto;
     }
 
 }

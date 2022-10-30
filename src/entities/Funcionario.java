@@ -40,7 +40,7 @@ public class Funcionario extends Colaborador{
         System.out.println("Endereço completo: "+getEnderecoCompleto());
         System.out.println("Login de acesso: "+getLogin());
     }
-    //Com override eu ajusto a lista para ser apresentada de acordo com os criterios de visualizacao para funcionarios
+    //Com override eu ajusto a lista para ser apresentada de acordo com criterios de visualizacao para funcionarios
     @Override
     public void listarDocumentos(){
         novoDocumento = new Documento();

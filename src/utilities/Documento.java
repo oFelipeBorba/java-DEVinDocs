@@ -36,9 +36,6 @@ public class Documento {
     public Integer getIdCriador() {
         return idCriador;
     }
-    public String getUrl() {
-        return url;
-    }
     public String getEstado() {
         return estado;
     }
@@ -53,9 +50,7 @@ public class Documento {
     public void setEstado(String estado) {
         this.estado = estado;
     }
-    public void setListaDocumentos(ArrayList<Documento> listaDocumentos) {
-        Documento.listaDocumentos = listaDocumentos;
-    }
+
     public void setIdResponsavel(Integer idResponsavel) {
         this.idResponsavel = idResponsavel;
     }

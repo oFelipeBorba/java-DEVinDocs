@@ -9,7 +9,10 @@
       <change beforePath="$PROJECT_DIR$/src/entities/Gerente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Gerente.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entities/Pessoa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Pessoa.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entities/Supervisor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Supervisor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utilities/Documento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilities/Documento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utilities/GestaoEquipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilities/GestaoEquipe.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utilities/SistemaInterno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilities/SistemaInterno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utilities/ValidaCPF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilities/ValidaCPF.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +91,9 @@
       <workItem from="1666904943807" duration="4751000" />
       <workItem from="1666912251922" duration="772000" />
       <workItem from="1666917162300" duration="30000" />
-      <workItem from="1666997343520" duration="4010000" />
+      <workItem from="1666997343520" duration="7127000" />
+      <workItem from="1667089959143" duration="592000" />
+      <workItem from="1667168406493" duration="1588000" />
     </task>
     <servers />
   </component>

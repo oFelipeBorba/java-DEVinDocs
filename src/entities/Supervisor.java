@@ -4,6 +4,7 @@ import utilities.Documento;
 import utilities.ValidaCPF;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Supervisor extends Colaborador{
     private Integer idSupervisor;
@@ -63,6 +64,7 @@ public class Supervisor extends Colaborador{
             //Faco uma verificacao para saber se o supervisor esta tentando recusar um documento dele mesmo, o que nao e permitido.
             if (doc.getIdDoc().equals(idDoc) && !doc.getIdCriador().equals(idSupervisor) ){
                 doc.setIdResponsavel(doc.getIdCriador());
+                doc.setDataTramitacao(novaData = new Date());
                 System.out.println("O documento foi recusado com sucesso e retornou para o seu criador(ID: "+doc.getIdCriador()+")");
             } else if (doc.getIdDoc().equals(idDoc) && doc.getIdCriador().equals(idSupervisor) ) {
                 System.out.println("\nATENÇÃO: Você não pode recusar um documento criado por você mesmo.");

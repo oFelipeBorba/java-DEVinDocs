@@ -17,7 +17,7 @@ public class GestaoEquipe {
     public GestaoEquipe(){
     }
 
-    //metodo que adiciona o novo colaborados na sua ArrayList de acordo com a instância que o obj foi criado
+    //metodo que adiciona o novo colaborados na sua ArrayList de acordo com a instância que o objeto foi criado
     public void adicionaColaborador(Pessoa pessoa){
         if(pessoa instanceof Funcionario){
             listaFuncionarios.add((Funcionario) pessoa);

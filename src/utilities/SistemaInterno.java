@@ -118,7 +118,7 @@ public class SistemaInterno {
                     }
                 } while (estadoMenuInterno != 0);
                 break;
-            //Menu interno de supervisores, pode listar os documentos criados por qualquer funcionario e tramitar o que ele criou ou que foi direcionado a ele.
+            //Menu interno de supervisores: pode listar os documentos criados por qualquer funcionario e tramitar o que ele criou ou que foi direcionado a ele.
             case 2:
                 do {
                     System.out.println("\n------MENU INTERNO -> SUPERVISOR------");

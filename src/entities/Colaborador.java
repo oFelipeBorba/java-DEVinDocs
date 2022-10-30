@@ -30,14 +30,6 @@ public abstract class Colaborador extends Pessoa{
         return senha;
     }
 
-    //setters
-    public void setLogin(String login) {
-        this.login = login;
-    }
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
-
     //metodo que cria um novo documento no sistema
     public void cadastraDocumento(Integer idResponsavel, Integer idCriador, String url){
         novoDocumento = new Documento(idResponsavel,idCriador,url);
@@ -59,18 +51,15 @@ public abstract class Colaborador extends Pessoa{
                 listaIdsDocsTramitaveis = new ArrayList<>();
                 for(Documento doc: novoDocumento.getListaDocumentos()){
                     if (doc.toString().contains("Em aberto") && doc.getIdResponsavel().equals(idCriador)){
-                        System.out.println(doc.toString());
+                        System.out.println(doc);
                         listaIdsDocsTramitaveis.add(doc.getIdDoc());
                     }
                 }
-                if (listaIdsDocsTramitaveis.size() == 0){
-                    return false;
-                }
+                return listaIdsDocsTramitaveis.size() != 0;
             }else {
                 return false;
             }
-            return true;
-        }
+    }
 
     public void tramitaDocumento(int id, int idResponsavel, int idTramite){
         novoDocumento = new Documento();

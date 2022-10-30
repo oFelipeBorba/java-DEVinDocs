@@ -35,11 +35,23 @@ public class Program {
                     //Criando um novo usuario, busco valores para os atributos para criar uma nova pessoa, ao final eu instancio ela com o tipo
                     // de colaborador escolhido pelo usuario (funcionario, supervisor ou gerente)
                     case 1:
-                        System.out.println("\nInforme seu nome: ");
-                        nome = teclado.nextLine();
 
-                        System.out.println("\nInforme seu sobrenome: ");
-                        sobrenome = teclado.nextLine();
+                        do {
+                            System.out.println("\nInforme seu nome: ");
+                            nome = teclado.nextLine();
+                            if (nome.length() < 3) {
+                                System.out.println("ATENÇÃO: O nome informado é menor que 3 caracteres.");
+                            }
+                        }while(nome.length()<3);
+
+                        do {
+                            System.out.println("\nInforme seu sobrenome: ");
+                            sobrenome = teclado.nextLine();
+                            if (sobrenome.length() < 4) {
+                                System.out.println("ATENÇÃO: O sobrenome informado é menor que 4 caracteres.");
+                            }
+                        }while(sobrenome.length()<4);
+
                         //Realizo um loop para validar o cpf, chamo um metodo verificaCPF
                         do {
                             System.out.println("\nInforme os 11 números do seu cpf: ");
@@ -50,11 +62,21 @@ public class Program {
                             }
                         }while (!validadorCpf);
 
-                        System.out.println("\nInforme seu endereço completo: ");
-                        enderecoCompleto = teclado.nextLine();
+                        do {
+                            System.out.println("\nInforme seu endereço completo: ");
+                            enderecoCompleto = teclado.nextLine();
+                            if (enderecoCompleto.length() < 6) {
+                                System.out.println("ATENÇÃO: O endereço informado é menor que 6 caracteres.");
+                            }
+                        }while(enderecoCompleto.length()<6);
 
-                        System.out.println("\nInforme sua data de nascimento: ");
-                        dataNascimento = teclado.nextLine();
+                        do {
+                            System.out.println("\nInforme sua data de nascimento: ");
+                            dataNascimento = teclado.nextLine();
+                            if (dataNascimento.length()<6){
+                                System.out.println("ATENÇÃO: A data de nascimento informada é menor que 6 caracteres.");
+                            }
+                        }while (dataNascimento.length()<6);
 
                         //Realizo um loop para que o login e senha sejam criados de acordo com a exigencia
                         do {
