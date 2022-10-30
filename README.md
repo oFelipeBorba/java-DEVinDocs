@@ -18,6 +18,8 @@ Para o bom funcionamento do sistema, o usuário deverá cadastrar pelo menos 1 c
 
 **Exemplo de colaboradores cadastrados no sistema:**  
 
+<img src="https://user-images.githubusercontent.com/108702072/198857607-fb847c25-134b-4f77-a592-f730d776957b.png" width="400px" />  
+
 
 
 > Desenvolvido por: Felipe de Oliveira Borba
